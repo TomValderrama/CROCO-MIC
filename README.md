@@ -58,4 +58,4 @@ El script `make_frc_era5.py` procesa el forzante ERA5 mes a mes para minimizar e
 
 ## Contexto
 
-Este modelo forma parte de la tesis de Magíster en Geofísica (Universidad de Concepción) sobre la dinámica del remolino del Golfo de Ancud y su relación con el sistema de fiordos del MIC.
+Este repositorio contiene el código asociado al manuscrito científico "Origin and dynamics of the Gulf of Ancud's eddy, in Chile: A numerical analysis", actualmente en revisión en *Ocean Modelling*. El trabajo se originó como tesis de Magíster en Geofísica (Universidad de Concepción) y está siendo preparado para publicación como artículo científico.
