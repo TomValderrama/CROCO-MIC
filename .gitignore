@@ -1,0 +1,61 @@
+# Datos NetCDF (demasiado pesados para git)
+*.nc
+*.nc.done
+
+# Logs
+*.log
+prepro.log
+frc.log
+
+# Directorios de datos crudos
+01_inputs/forcing/
+01_inputs/glorys_raw/
+01_inputs/croco_files/
+01_inputs/initial_conditions/
+01_inputs/open_boundary/
+01_inputs/runoff/
+01_inputs/tides/
+01_inputs/grid/
+
+# Outputs del modelo
+02_runs/
+03_outputs/
+
+# Repos externos (tienen su propio git)
+CROCO_SRC/
+croco_pytools/
+croco_tools-v1.3/
+croco/
+
+# Binarios compilados
+Compile/
+ncjoin
+partit
+*.o
+*.mod
+*.a
+
+# Archivos temporales y misc
+*.txt.1
+namelist_*.1
+kRGB61.txt
+kRGB61.txt.1
+MUSTANG_NAMELIST
+namelist_pisces_cfg
+namelist_pisces_cfg.1
+namelist_pisces_cfg_p2z
+namelist_pisces_cfg_p5z
+namelist_pisces_ref
+namelist_pisces_ref.1
+namelist_sediment_cfg
+namelist_sediment_ref
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
