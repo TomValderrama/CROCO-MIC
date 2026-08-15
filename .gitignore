@@ -59,3 +59,11 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Librerías externas descargadas (no versionar, muy pesadas)
+gshhg-gmt-2.3.7.tar.gz
+m_map1.4f.tar.gz
+m_map1.4f2.tar
+
+# Obsidian vault config local
+05_docs/.obsidian/

@@ -27,7 +27,7 @@ fi
 
 # Convertir a ruta absoluta
 RUNDIR="$(realpath "$RUNDIR")"
-CROCO_EXE="/mnt/d/ProyectoMsc_CROCO/croco"
+CROCO_EXE="/mnt/d/Proyectos/CROCO_MIC/croco"
 LOGFILE="$RUNDIR/croco_run.log"
 SESSION="croco"
 

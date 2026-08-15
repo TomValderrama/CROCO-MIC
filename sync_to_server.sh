@@ -16,7 +16,7 @@ SERVER_USER="tvalderrama"           # tu usuario en el server
 SERVER_HOST="server.example.com"    # hostname o IP del server
 SERVER_PATH="/home/tvalderrama/ProyectoMsc_CROCO"  # destino en el server
 
-LOCAL_PATH="/mnt/d/ProyectoMsc_CROCO"
+LOCAL_PATH="/mnt/d/Proyectos/CROCO_MIC"
 # ──────────────────────────────────────────────────────────────────────────────
 
 DRY_RUN="--dry-run"

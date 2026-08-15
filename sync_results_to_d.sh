@@ -12,7 +12,7 @@ RUNDIR_REL="${1:-02_runs/control_verano}"
 MODE="${2:---outputs}"
 EXP_NAME=$(basename "$RUNDIR_REL")
 SRC="$HOME/croco_runs/$EXP_NAME"
-DEST="/mnt/d/ProyectoMsc_CROCO/$RUNDIR_REL"
+DEST="/mnt/d/Proyectos/CROCO_MIC/$RUNDIR_REL"
 
 echo "=== Sincronizando resultados: $EXP_NAME ==="
 echo "  Origen:  $SRC"

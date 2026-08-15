@@ -4,7 +4,7 @@ description: El directorio de trabajo contiene archivos mezclados — hay cosas 
 type: project
 ---
 
-El directorio `/mnt/d/ProyectoMsc_CROCO` (o la raíz del proyecto) tiene archivos que no son del proyecto CROCO. El usuario mencionó haber visto cosas de Illumina (ej. benchmark.txt) mezcladas con los archivos del proyecto.
+El directorio `/mnt/d/Proyectos/CROCO_MIC` (o la raíz del proyecto) tiene archivos que no son del proyecto CROCO. El usuario mencionó haber visto cosas de Illumina (ej. benchmark.txt) mezcladas con los archivos del proyecto.
 
 **Why:** El directorio fue usado para múltiples cosas y hay archivos de Illumina que no corresponden al proyecto CROCO de MSc.
 

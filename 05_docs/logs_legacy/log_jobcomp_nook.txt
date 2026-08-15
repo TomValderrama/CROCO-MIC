@@ -1,0 +1,115 @@
+OPERATING SYSTEM IS: Linux
+PROCESSOR IS: x86_64
+/bin/cp: cannot stat ‘./OCEAN/../AGRIF’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../XIOS/*.F’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../PISCES/*’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../PISCES/kRGB61*’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/PISCES/namelist_pisces*’: No such file or directory
+  file namelist_pisces copied from source directory
+/bin/cp: cannot stat ‘*.F90’: No such file or directory
+/bin/cp: cannot stat ‘*.h90’: No such file or directory
+/bin/cp: cannot stat ‘*.F’: No such file or directory
+/bin/cp: cannot stat ‘Make*’: No such file or directory
+Checking COMPILEAGRIF...
+Checking COMPILEMPI...
+ => MPI activated
+Checking COMPILENBQ...
+Checking COMPILEXIOS...
+Checking COMPILEOASIS...
+/bin/rm -rf core *.o AGRIF/AGRIF_YOURFILES/*.o *.i *.s *.f *.f90 *.trace *.mod 
+/bin/rm -rf croco mpc cross_matrix cppcheck srcscheck checkkwds partit ncjoin ncrename ./rii_files
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  mpc.F > mpc_.f
+mpiifort -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2   -o mpc mpc_.f
+mpc_.f(23): remark #15009: MAIN__ has been targeted for automatic cpu dispatch
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  par_pisces.F90 > par_pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  par_pisces_.f90 -o par_pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  ocean2pisces.F90 > ocean2pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  ocean2pisces_.f90 -o ocean2pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  trc.F90 > trc_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  trc_.f90 -o trc.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  sms_pisces.F90 > sms_pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  sms_pisces_.f90 -o sms_pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zche.F90 > p4zche_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zche_.f90 -o p4zche.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zint.F90 > p4zint_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zint_.f90 -o p4zint.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zlys.F90 > p4zlys_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zlys_.f90 -o p4zlys.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zflx.F90 > p4zflx_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zflx_.f90 -o p4zflx.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zlim.F90 > p4zlim_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zlim_.f90 -o p4zlim.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zsink.F90 > p4zsink_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zsink_.f90 -o p4zsink.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zmicro.F90 > p4zmicro_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zmicro_.f90 -o p4zmicro.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zmeso.F90 > p4zmeso_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zmeso_.f90 -o p4zmeso.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zmort.F90 > p4zmort_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zmort_.f90 -o p4zmort.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zopt.F90 > p4zopt_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zopt_.f90 -o p4zopt.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zprod.F90 > p4zprod_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zprod_.f90 -o p4zprod.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zrem.F90 > p4zrem_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zrem_.f90 -o p4zrem.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zsed.F90 > p4zsed_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zsed_.f90 -o p4zsed.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  p4zbio.F90 > p4zbio_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  p4zbio_.f90 -o p4zbio.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  trcwri_pisces.F90 > trcwri_pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  trcwri_pisces_.f90 -o trcwri_pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  trcsms_pisces.F90 > trcsms_pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  trcsms_pisces_.f90 -o trcsms_pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  trcini_pisces.F90 > trcini_pisces_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  trcini_pisces_.f90 -o trcini_pisces.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  pisces_ini.F90 > pisces_ini_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  pisces_ini_.f90 -o pisces_ini.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_parameter.F90 > module_oa_parameter_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_parameter_.f90 -o module_oa_parameter.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_time.F90 > module_oa_time_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_time_.f90 -o module_oa_time.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_space.F90 > module_oa_space_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_space_.f90 -o module_oa_space.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_periode.F90 > module_oa_periode_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_periode_.f90 -o module_oa_periode.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_variables.F90 > module_oa_variables_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_variables_.f90 -o module_oa_variables.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_type.F90 > module_oa_type_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_type_.f90 -o module_oa_type.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_stock.F90 > module_oa_stock_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_stock_.f90 -o module_oa_stock.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_level.F90 > module_oa_level_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_level_.f90 -o module_oa_level.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_interface.F90 > module_oa_interface_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_interface_.f90 -o module_oa_interface.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  module_oa_upd.F90 > module_oa_upd_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  module_oa_upd_.f90 -o module_oa_upd.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  croco_oa.F90 > croco_oa_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  croco_oa_.f90 -o croco_oa.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  var_oa.F90 > var_oa_.f90
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  var_oa_.f90 -o var_oa.o
+var_oa_.f90(217): warning #6178: The return value of this FUNCTION has not been defined.   [VAR_OA]
+     real function var_oa(                                           &
+-------------------^
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  main.F | ./mpc > main_.f
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  main_.f -o main.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  step.F | ./mpc > step_.f
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  step_.f -o step.o
+step_.f(1): remark #15009: step_ has been targeted for automatic cpu dispatch
+step_.f(191): remark #15009: prestep3d_thread_ has been targeted for automatic cpu dispatch
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  read_inp.F | ./mpc > read_inp_.f
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  read_inp_.f -o read_inp.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  timers_roms.F | ./mpc > timers_roms_.f
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  timers_roms_.f -o timers_roms.o
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  init_scalars.F | ./mpc > init_scalars_.f
+mpiifort -c -O3 -72 -fno-alias -i4 -r8 -fp-model precise -mcmodel=medium -axCORE-AVX512,AVX,SSE4.2  init_scalars_.f -o init_scalars.o
+init_scalars_.f(305): error #6404: This name does not have a type, and must have an explicit type.   [CSMOOTH]
+      csmooth=dt/(86400.D0)
+------^
+init_scalars_.f(306): error #6404: This name does not have a type, and must have an explicit type.   [ISMOOTH]
+      ismooth=int(1.D0/csmooth)
+------^
+compilation aborted for init_scalars_.f (code 1)
+make: *** [init_scalars.o] Error 1
+mv: cannot stat ‘croco’: No such file or directory

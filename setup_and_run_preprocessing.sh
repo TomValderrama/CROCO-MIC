@@ -3,13 +3,13 @@
 # Instala Miniconda + entorno croco_pytools, luego genera todos los archivos de input CROCO.
 # Diseñado para correr en tmux mientras el usuario duerme.
 #
-# USO: tmux new-session -d -s prepro "bash /mnt/d/ProyectoMsc_CROCO/setup_and_run_preprocessing.sh 2>&1 | tee /mnt/d/ProyectoMsc_CROCO/prepro.log"
-# VER LOG: tail -f /mnt/d/ProyectoMsc_CROCO/prepro.log
+# USO: tmux new-session -d -s prepro "bash /mnt/d/Proyectos/CROCO_MIC/setup_and_run_preprocessing.sh 2>&1 | tee /mnt/d/Proyectos/CROCO_MIC/prepro.log"
+# VER LOG: tail -f /mnt/d/Proyectos/CROCO_MIC/prepro.log
 
 set -euo pipefail
 
-LOGFILE="/mnt/d/ProyectoMsc_CROCO/prepro.log"
-PROJ="/mnt/d/ProyectoMsc_CROCO"
+LOGFILE="/mnt/d/Proyectos/CROCO_MIC/prepro.log"
+PROJ="/mnt/d/Proyectos/CROCO_MIC"
 INPUTS="$PROJ/01_inputs/croco_files"
 PREPRO="$PROJ/croco_pytools/prepro"
 CONDA_DIR="$HOME/miniconda3"

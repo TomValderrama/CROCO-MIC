@@ -1,0 +1,37 @@
+OPERATING SYSTEM IS: Linux
+PROCESSOR IS: x86_64
+/bin/cp: cannot stat ‘./OCEAN/../AGRIF’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../XIOS/*.F’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../PISCES/*’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/../PISCES/kRGB61*’: No such file or directory
+/bin/cp: cannot stat ‘./OCEAN/PISCES/namelist_pisces*’: No such file or directory
+  file namelist_pisces copied from source directory
+/bin/cp: cannot stat ‘*.F90’: No such file or directory
+/bin/cp: cannot stat ‘*.h90’: No such file or directory
+/bin/cp: cannot stat ‘*.F’: No such file or directory
+/bin/cp: cannot stat ‘Make*’: No such file or directory
+Checking COMPILEAGRIF...
+Checking COMPILEMPI...
+ => MPI activated
+Checking COMPILENBQ...
+Checking COMPILEXIOS...
+Checking COMPILEOASIS...
+/bin/rm -rf core *.o AGRIF/AGRIF_YOURFILES/*.o *.i *.s *.f *.f90 *.trace *.mod 
+/bin/rm -rf croco mpc cross_matrix cppcheck srcscheck checkkwds partit ncjoin ncrename ./rii_files
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  mpc.F > mpc_.f
+mpif90 -O2 -mcmodel=medium -fno-alias -i4 -r8 -fp-model precise   -o mpc mpc_.f
+gfortran: error: precise: No such file or directory
+gfortran: error: unrecognized command line option ‘-fno-alias’; did you mean ‘-Wno-abi’?
+gfortran: error: unrecognized command line option ‘-i4’
+gfortran: error: unrecognized command line option ‘-r8’; did you mean ‘-k8’?
+gfortran: error: unrecognized command line option ‘-fp-model’
+make: *** [mpc] Error 1
+cpp -traditional -DLinux -DIfort -P -I/home/lmod/software/MPI/intel/2018.5.274-GCC-8.2.0-2.31.1/impi/2018.4.274/netCDF-Fortran/4.4.4/include -IROMSFILES/AGRIF_INC  par_pisces.F90 > par_pisces_.f90
+mpif90 -c -O2 -mcmodel=medium -fno-alias -i4 -r8 -fp-model precise  par_pisces_.f90 -o par_pisces.o
+gfortran: error: precise: No such file or directory
+gfortran: error: unrecognized command line option ‘-fno-alias’; did you mean ‘-Wno-abi’?
+gfortran: error: unrecognized command line option ‘-i4’
+gfortran: error: unrecognized command line option ‘-r8’; did you mean ‘-k8’?
+gfortran: error: unrecognized command line option ‘-fp-model’
+make: *** [par_pisces.o] Error 1
+mv: cannot stat ‘croco’: No such file or directory
